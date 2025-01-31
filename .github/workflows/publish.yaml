@@ -18,9 +18,9 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-	with:
-	  lfs: 'true'
-      
+        with:
+          lfs: 'true'
+
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
@@ -53,4 +53,4 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
-          
+
